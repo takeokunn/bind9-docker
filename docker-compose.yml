@@ -1,0 +1,8 @@
+version: "3"
+
+services:
+  app:
+    build: .
+    command: "tail -f /var/log/faillog"
+    ports:
+      - "10053:53"
