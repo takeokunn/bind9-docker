@@ -1,8 +1,6 @@
-acl "trusted" {
-	10.128.10.11;    # ns1
-	10.128.20.12;    # ns2 - can be set to localhost
-	10.128.100.101;  # host1
-	10.128.200.102;  # host2
+acl localnet {
+	127.0.0.1;
+	192.168.0.0/24;
 };
 
 options {
@@ -18,14 +16,13 @@ options {
 	// the all-0's placeholder.
 
 	recursion yes;
-	allow-recursion { trusted; };
-	listen-on { 10.128.20.12; };
+	allow-recursion { localhost; };
+	listen-on { localhost; };
 	allow-transfer { none; };
 
 	forwarders {
 		8.8.8.8;
 		1.1.1.1;
-		8.8.4.4;
 	};
 
 	//========================================================================
