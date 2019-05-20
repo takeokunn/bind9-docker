@@ -11,9 +11,9 @@ ADD ./bootstrap.sh /bootstrap.sh
 ADD ./default/bind9 /etc/default/bind9
 
 # bind
-ADD ./bind/named.conf /etc/bind/named.conf
-ADD ./bind/named.conf.local /etc/bind/named.conf.local
-ADD ./bind/named.conf.options /etc/bind/named.conf.local.options
+ADD ./content/named.conf /etc/bind/named.conf
+ADD ./content/named.conf.local /etc/bind/named.conf.local
+ADD ./content/named.conf.options /etc/bind/named.conf.local.options
 
 # bind zones
-ADD ./bind/zones /etc/bind/zones
+ADD ./content/zones /etc/bind/zones
